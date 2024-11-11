@@ -21,10 +21,10 @@ pnpm install
 Build the extension with one of the following commands:
 
 ```bash
-pnpm build            # Creates production build
-pnpm build:patch     # Bumps patch version (1.0.0 -> 1.0.1) and builds
-pnpm build:minor     # Bumps minor version (1.0.0 -> 1.1.0) and builds
-pnpm build:major     # Bumps major version (1.0.0 -> 2.0.0) and builds
+pnpm build        # Creates production build
+pnpm build:patch  # Bumps patch version (1.0.0 -> 1.0.1) and builds
+pnpm build:minor  # Bumps minor version (1.0.0 -> 1.1.0) and builds
+pnpm build:major  # Bumps major version (1.0.0 -> 2.0.0) and builds
 ```
 
 Add `--force` to any build command to overwrite existing builds:
