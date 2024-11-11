@@ -22,8 +22,8 @@ function replaceZoomClips() {
   );
 
   const nodesToReplace = [];
-  let node;
-  while (node = walker.nextNode()) {
+  let node = null;
+  while ((node = walker.nextNode())) {
     const testRegex = new RegExp(zoomClipRegex);
     if (testRegex.test(node.textContent)) {
       nodesToReplace.push(node);

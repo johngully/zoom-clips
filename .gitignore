@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Build outputs
+dist/
+build/
+*.zip
+
+# IDE and Editor files
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Debug logs
+debug.log
+*.log
+
+# Chrome Extension specific
+*.pem
+*.crx
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/ 

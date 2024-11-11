@@ -5,10 +5,10 @@ function setDisabledIcon(tabId) {
   chrome.action.setIcon({
     tabId: tabId,
     path: {
-      "16": "icons/zoom-16-disabled.png",
-      "32": "icons/zoom-32-disabled.png",
-      "48": "icons/zoom-48-disabled.png",
-      "128": "icons/zoom-128-disabled.png"
+      '16': 'icons/zoom-16-disabled.png',
+      '32': 'icons/zoom-32-disabled.png',
+      '48': 'icons/zoom-48-disabled.png',
+      '128': 'icons/zoom-128-disabled.png'
     }
   });
 }
@@ -17,10 +17,10 @@ function setDetectedIcon(tabId) {
   chrome.action.setIcon({
     tabId: tabId,
     path: {
-      "16": "icons/zoom-16-detected.png",
-      "32": "icons/zoom-32-detected.png",
-      "48": "icons/zoom-48-detected.png",
-      "128": "icons/zoom-128-detected.png"
+      '16': 'icons/zoom-16-detected.png',
+      '32': 'icons/zoom-32-detected.png',
+      '48': 'icons/zoom-48-detected.png',
+      '128': 'icons/zoom-128-detected.png'
     }
   });
 }
@@ -29,10 +29,10 @@ function setNotDetectedIcon(tabId) {
   chrome.action.setIcon({
     tabId: tabId,
     path: {
-      "16": "icons/zoom-16-not-detected.png",
-      "32": "icons/zoom-32-not-detected.png",
-      "48": "icons/zoom-48-not-detected.png",
-      "128": "icons/zoom-128-not-detected.png"
+      '16': 'icons/zoom-16-not-detected.png',
+      '32': 'icons/zoom-32-not-detected.png',
+      '48': 'icons/zoom-48-not-detected.png',
+      '128': 'icons/zoom-128-not-detected.png'
     }
   });
 }
@@ -44,7 +44,7 @@ async function initializeState() {
     const tabs = await chrome.tabs.query({});
     tabs.forEach(tab => updateIcon(tab.id));
   } catch (error) {
-    console.error("Error initializing state:", error);
+    console.error('Error initializing state:', error);
   }
 }
 
@@ -63,7 +63,7 @@ function updateIcon(tabId) {
 
 initializeState();
 
-chrome.action.onClicked.addListener(async (tab) => {
+chrome.action.onClicked.addListener(async () => {
   isEnabled = !isEnabled;
   await chrome.storage.local.set({ isEnabled });
 
@@ -74,7 +74,7 @@ chrome.action.onClicked.addListener(async (tab) => {
   });
 });
 
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
   if (!isEnabled) {
     setDisabledIcon(tabId);
     return;
