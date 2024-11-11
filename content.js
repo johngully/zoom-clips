@@ -31,10 +31,8 @@ function replaceZoomClips() {
   }
 
   if (nodesToReplace.length > 0) {
-    // First notify background of clips
     chrome.runtime.sendMessage({ clipsDetected: true });
     
-    // Then replace the nodes
     nodesToReplace.forEach(node => {
       const content = node.textContent;
       const matches = [...content.matchAll(zoomClipRegex)];
@@ -65,7 +63,6 @@ function replaceZoomClips() {
   }
 }
 
-// Get initial state and run replacement
 chrome.runtime.sendMessage({ getState: true }, (response) => {
   if (response && 'isEnabled' in response) {
     isEnabled = response.isEnabled;
@@ -75,7 +72,6 @@ chrome.runtime.sendMessage({ getState: true }, (response) => {
   }
 });
 
-// Handle state changes
 chrome.runtime.onMessage.addListener((message) => {
   if ('isEnabled' in message) {
     isEnabled = message.isEnabled;
@@ -87,7 +83,6 @@ chrome.runtime.onMessage.addListener((message) => {
   }
 });
 
-// Watch for dynamic content changes
 const observer = new MutationObserver(() => {
   if (isEnabled) {
     replaceZoomClips();
