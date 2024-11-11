@@ -9,7 +9,8 @@
     "build:patch": "node build.js patch",
     "build:minor": "node build.js minor",
     "build:major": "node build.js major",
-    "build:force": "node build.js --force"
+    "build:force": "node build.js --force",
+    "release": "node release.js"
   },
   "devDependencies": {
     "archiver": "^7.0.1",
