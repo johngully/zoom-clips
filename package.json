@@ -1,12 +1,19 @@
 {
-  "name": "zoom-clip-embedder",
-  "version": "1.0.0",
+  "name": "zoom-clips",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "build": "node build.js",
+    "build:patch": "node build.js patch",
+    "build:minor": "node build.js minor",
+    "build:major": "node build.js major",
+    "build:force": "node build.js --force"
   },
   "devDependencies": {
-    "eslint": "^8.57.0"
+    "archiver": "^7.0.1",
+    "eslint": "^8.57.0",
+    "semver": "^7.6.3"
   }
-} 
+}
