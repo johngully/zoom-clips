@@ -69,6 +69,11 @@ Builds are created in the `build` directory with the naming format: `zoom-clips-
    git push origin main
    ```
 
+6. ** Publish to Chrome Web Store **
+   - Go to [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole)
+   - Click "Release"
+   - Click "Publish"
+
 ## Troubleshooting
 
 - If a build already exists, either:
